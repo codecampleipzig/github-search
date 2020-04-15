@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Search</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src=https://unpkg.com/nprogress@0.2.0/nprogress.js></script>
+    <script src="mock/search-results.js"></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="search-bar">
+        <div class="logo">
+          <img src="assets/GitHub_Logo.png" alt="GitHub" />
+        </div>
+        <form @submit.prevent="onSubmit">
+          <input v-model="searchQuery" type="text" />
+          <input type="submit" value="GitHub Search" />
+        </form>
+      </div>
+      <div class="search-results">
+        <div v-for="result in searchResults" :key="result.id">
+          <div class="search-result-link">
+            <a :href="result.html_url" target="_blank">
+              <div>{{result.html_url}}</div>
+              <h2>{{result.full_name}}</h2></a>
+          </div>
+
+            <div class="search-result-description">
+              <p>{{result.description}}</p>
+            </div>
+
+            <div class="search-result-owner">
+              <a :href="result.owner.html_url">
+                <img :src="result.owner.avatar_url"></img>
+                <span>{{result.owner.login}}</span>
+              </a>
+            </div>
+
+            <div class="search-result-extras">
+              <span>Stars: {{result.watchers_count}}</span>
+              <span>Forks: {{result.forks_count}}</span>
+              <span>Open Issues: {{result.open_issues_count}}</span>
+              <span v-if="result.license">License: {{result.license.name}}</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
