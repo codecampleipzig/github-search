@@ -1,0 +1,48 @@
+/* Base Reset */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+h2 {
+  margin-top: 0.2em;
+}
+
+* {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 0;
+}
+
+.logo {
+  width: 400px;
+  max-width: 95vw;
+}
+
+.search-results {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-results img {
+  width: 30px;
+}
+
+.search-results > * {
+  margin-bottom: 3em;
+  margin-left: 1em;
+}
