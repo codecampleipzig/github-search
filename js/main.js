@@ -1,6 +1,6 @@
 axios({
   method: "get",
-  url: "https://api.chucknorris.com/jokes/search",
+  url: "https://api.chucknorris.io/jokes/search",
   params: {
     query: "linux",
   },
@@ -13,3 +13,7 @@ axios({
   .catch((error) => {
     console.log("Something went wrong", error);
   });
+
+const app = new Vue({
+  el: "#app",
+});

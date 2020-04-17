@@ -6,35 +6,38 @@
     <title>GitHub Search</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <div class="search-bar">
-      <div class="logo">
-        <img src="assets/GitHub_Logo.png" alt="GitHub" />
+    <div id="app">
+      <div class="search-bar">
+        <div class="logo">
+          <img src="assets/GitHub_Logo.png" alt="GitHub" />
+        </div>
+        <form>
+          <input type="text" />
+          <input type="submit" value="GitHub Search" />
+        </form>
       </div>
-      <form>
-        <input type="text" />
-        <input type="submit" value="GitHub Search" />
-      </form>
-    </div>
-    <div class="search-results">
-      <div class="search-result">
-        <div class="search-result-link">
-          <a href="https://github.com">
-            <div class="html-url">https://github.com</div>
-            <h2>GitHub</h2>
-          </a>
-        </div>
-        <div class="search-result-description">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eveniet
-            ullam, praesentium ratione animi nesciunt dolores veritatis expedita
-            quas vitae numquam esse maiores officia dolor!
-          </p>
-        </div>
-        <div class="search-result-extras">
-          <span>Stars: 3000</span>
+      <div class="search-results">
+        <div class="search-result">
+          <div class="search-result-link">
+            <a href="https://github.com">
+              <div class="html-url">https://github.com</div>
+              <h2>GitHub</h2>
+            </a>
+          </div>
+          <div class="search-result-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              eveniet ullam, praesentium ratione animi nesciunt dolores
+              veritatis expedita quas vitae numquam esse maiores officia dolor!
+            </p>
+          </div>
+          <div class="search-result-extras">
+            <span>Stars: 3000</span>
+          </div>
         </div>
       </div>
     </div>
